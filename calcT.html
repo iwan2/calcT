@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>関数電卓</title>
+<meta name="keywords" content="一般の関数,三角関数,指数関数・対数関数,順列・組合せ,１６進数,二次式の解,面積・体積,表面積">
+<meta name="description" content="関数電卓">
+<link rel="stylesheet" type="text/css" href="../../css/tom.css">
+<!-- common --> 
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=qifOUFZjlNBpbvSDxn44m9tC3KKItuKZoL5igErn1JAtQHaTx8pQ1sZQCSuR_0BkA7ghjhk5qW0zcUoAR96dxspYc5wJoONZ1MKXApN75Xk" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly90b21hcmkub3JnL21haW4vamF2YS9kZW50YWt1X2thbnN1dS5odG1s"/><script src="/js_common.js"></script>
+<style TYPE="text/css">
+
+.b{
+	width: 50px; height:30px;margin:2px;
+}
+.tcenter{}
+.color_red{
+	color:#FF0000 ;
+}
+</style>
+<script>
+function ini() {
+  ww = window.innerWidth ;
+  ww = window.screen.width ;
+  if ( ww < 600 ) {    
+    document.getElementById("idip").style.width = ( ww - 0 ) + "px" ;
+    document.getElementById("idtb").style.width = ( ww - 0 ) + "px" ;
+    document.getElementById("idtx").style.width = ( ww - 0 ) + "px" ;
+  }
+//alert(ww) ;
+}
+function disp(num){
+	document.calc.hyouji.value=document.calc.hyouji.value+num;
+}
+function calculate (){
+    tmp=document.calc.hyouji.value
+	document.calc.hyouji.value=eval(document.calc.hyouji.value);
+	document.calc.out.value=tmp+"="+document.calc.hyouji.value+"\n"+document.calc.out.value;
+}
+function e(){return Math.E;}
+function pai(){return Math.PI;}
+function sqr(x){return Math.pow(x,0.5);}
+function pow(x,y){return Math.pow(x,y);}
+function log(x){return Math.log(x)/Math.log(10);} 
+function ln(x){return Math.log(x);} 
+function exp(x){return Math.exp(x);}
+function ln2(){return Math.LN2;}
+function ln10(){return Math.LN10;}
+function ln2e(){return Math.LOG2E;}
+function ln10e(){return Math.LOG10E;}    
+function sin(x){return Math.sin((x)/180*Math.PI);}
+function cos(x){return Math.cos((x)/180*Math.PI);}
+function tan(x){return Math.tan((x)/180*Math.PI);}
+function asin(x){return Math.asin(x)/Math.PI*180;}
+function acos(x){return Math.acos(x)/Math.PI*180;}
+function atan(x){return Math.atan(x)/Math.PI*180;}
+function mod(x,y){return x-y*Math.floor(x/y)}
+function deg(x){return x/Math.PI*180}
+function rad(x){return x/180*Math.PI}
+function hex(x){return x.toString(16);}
+function dec(x){return parseInt(x,16)}
+function n(x){a=1; for(i=1;i<=x;i++) {a=a*i} return a;}
+function nPr(nn,rr){return n(nn)/n(nn-rr);}
+function nCr(nn,rr){return n(nn)/(n(rr)*n(nn-rr));}
+function Xa(aa,bb,cc){return (-bb+sqr(pow(bb,2)-4*aa*cc))/(2*aa);}
+function Xb(aa,bb,cc){return (-bb-sqr(pow(bb,2)-4*aa*cc))/(2*aa);}
+</script>
+</head>
+<BODY onload="ini() ; ">
+<h1>関数電卓</h1>
+<h4 class="tag">｜<a href="dentaku_kansuu.html">関数電卓</a>｜<a href="dentaku_time.html">時間計算電卓</a>｜<a href="dentaku_sankaku.html">三角関数電卓</a>｜
+<a href="../../sitemap.html">サイトマップ</a>｜<a href="../../index.html" target="_top">ホーム</a>｜</h4>
+<!-- header --> 
+<script src="/js_header.js"></script>
+<p><b>この電卓は関数入力様式で計算式を入力すると計算ができます。したがって複雑な組合せ計算も簡単にできます。<br>
+    また計算結果を計算結果出力エリアに記録するので、計算式と結果に確認ができます。<br>
+    さらに計算結果の出力計算式をコピーして入力エリアに張付ける事により、再計算ができます。<br>
+    関数の説明と、様式は下記に示します。</b></p>
+
+<table style="margin:0px auto;"><tr><td>
+<FORM Name="calc" onsubmit="return false;">
+<table id="idtb" style="background-color:#CCFFFF;" class="tbl">
+  <TR class="tcenter">
+        <td class="tcenter" colspan="2"><INPUT id="idip" NAME="hyouji" value="" size=30 style="font-size: 18pt; background-color: #CCFF99; color: #0000FF;width:600px;"></td>
+      </TR><TR class="tcenter">
+    <TD class="tcenter"><INPUT class=b TYPE="BUTTON" NAME="clear" VALUE="クリア" onClick="this.form.hyouji.value=''"></TD><td>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="０" onClick="disp(0)"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="１" onClick="disp(1)"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="２" onClick="disp(2)"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="３" onClick="disp(3)"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="４" onClick="disp(4)"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="５" onClick="disp(5)"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="６" onClick="disp(6)"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="７" onClick="disp(7)"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="８" onClick="disp(8)"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="９" onClick="disp(9)"></span></td>
+  </TR><TR class="tcenter">
+    <TD class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="＝" onClick="calculate ()"></TD><td>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="＋" onClick="disp('+')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="－" onClick="disp('-')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="＊" onClick="disp('*')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="／" onClick="disp('/')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE=" ．" onClick="disp('.')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="，" onClick="disp(',')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE=" ( " onClick="disp('(')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE=" ) " onClick="disp(')')"></span></td>
+  </TR><TR class="tcenter">
+    <TD class="tcenter">演算</TD><td>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="√" onClick="disp('sqr(')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="ｘ^ｙ" onClick="disp('pow(')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="mod" onClick="disp('mod(')"></span></td>
+  </TR><tr>
+    <TD class="tcenter">指数・対数</TD><td>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="ｅ" onClick="disp('e()')" style="font-size: 10pt"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="e^x" onClick="disp('exp(')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="log" onClick="disp('log(')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="ln" onClick="disp('ln(')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="ln2" onClick="disp('ln2()')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="ln10" onClick="disp('ln10()')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="ln2e" onClick="disp('ln2e()')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="ln10e" onClick="disp('ln10e()')"></span></td>
+  </tr><tr>
+    <TD class="tcenter">順列・組合</TD><td>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="ｎ！" onClick="disp('n(')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="ｎＰｒ" onClick="disp('nPr(')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="ｎＣｒ" onClick="disp('nCr(')"></span></td>
+  </tr><tr>
+    <TD class="tcenter">三角関数</TD><td>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="π" onClick="disp('pai()')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="rad" onClick="disp('rad(')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="deg" onClick="disp('deg(')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="sin" onClick="disp('sin(')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="cos" onClick="disp('cos(')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="tan" onClick="disp('tan(')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="asin" onClick="disp('asin(')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="acos" onClick="disp('acos(')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="atan" onClick="disp('atan(')"></span></td>
+  </tr><tr>
+    <TD class="tcenter">２次式解</TD><td>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="Ｘａ" onClick="disp('Xa(')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="Ｘｂ" onClick="disp('Xb(')"></span></td>
+  </tr><tr>
+    <TD class="tcenter">１６進数</TD><td>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="hex" onClick="disp('hex(')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="0x" onClick="disp('0x')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="Ａ" onClick="disp('a')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="Ｂ" onClick="disp('b')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="Ｃ" onClick="disp('c')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="Ｄ" onClick="disp('d')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="Ｅ" onClick="disp('e')"></span>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="Ｆ" onClick="disp('f')"></span></td>
+<tr><td colspan="2">
+<p>計算結果出力エリア<br>
+  <input type="button" value="　出力エリアクリア　" onClick="this.form.out.value=''"><br>
+  <textarea id="idtx" name="out" ROWS=10 COLS=60 style="width:600px;"></textarea></p></td>
+  </tr>
+</table>
+</form>
+<P><b>計算関数の説明</b><span  class="color_red"><u>（関数様式は赤、下線で示す）</u></span></p>
+<P><b>■一般の関数</b> <ul style="list-style-type: square">
+    <li>ｘのｙ乗　　　　　：<span  class="color_red"><u>ｐｏｗ（ｘ、ｙ）</u></span></li>
+    <li>ルート（　√<span style="text-decoration: overline">ｘ</span>　）：<span  class="color_red"><u>ｓｑｒ（ｘ）</u></span></li>
+    <li>ｙルート（　<sup>ｙ</sup>√<span style="text-decoration: overline">ｘ</span>　）：<span  class="color_red">ｐｏｗ（ｘ、１／ｙ）</span></li>
+    <li>ｘ／ｙの余り　　：<span  class="color_red"><u>ＭＯＤ（ｘ，ｙ）</u></span></li>
+  </ul>
+  <P><b>■三角関数</b> <ul style="list-style-type: square">
+    <li>サイン：<span  class="color_red"><u>ｓｉｎ（ｘ）</u></span>、ｘは角度（デグリ）</li>
+    <li>コサイン：<span  class="color_red"><u>ｃｏｓ（ｘ）</u></span></li>
+    <li>タンジェント：<span  class="color_red"><u>ｔａｎ（ｘ）</u></span></li>
+    <li>アークサイン：<span  class="color_red"><u>ａｓｉｎ（ｘ）</u></span></li>
+    <li>アークコサイン：<span  class="color_red"><u>ａｃｏｓ（ｘ）</u></span></li>
+    <li>アークタンジェント：<span  class="color_red"><u>ａｔａｎ（ｘ）</u></span></li>
+    <li>円周率：<span  class="color_red">ｐａｉ（）</span></li>
+    <li>ラジアンを角度に変換：<span  class="color_red">ｄｅｇ（ｘ）</span>、ｘはラジアン</li>
+    <li>角度をラジアンに：<span  class="color_red">ｒａｄ（ｘ）</span>、ｘはデグリ</li>
+  </ul>
+  <P><b>■指数関数・対数関数</b> <ul style="list-style-type: square">
+    <li>自然対数ｅの値：<span  class="color_red">ｅ（）</span></li>
+    <li>e を底とした2の対数：<span  class="color_red">ｌｎ２（）</span>ＬＮ２（）</li>        
+    <li>e を底とした10の対数：<span  class="color_red">ｌｎ１０（）</span>ＬＮ１０（）</li>        
+    <li>２を底とした e の対数：<span  class="color_red">ｌｎ２ｅ（）</span>ＬＯＧ２Ｅ（）</li>       
+    <li>１０を底とした e の対数：<span  class="color_red">ｌｎ１０ｅ（）</span>ＬＯＧ１０Ｅ（）</li>       
+    <li>ｅ<sup>ｘ</sup>：<span  class="color_red">ｅｘｐ（ｘ）</span></li>    
+    <li>ｅを底としたｘの対数：<span  class="color_red">ｌｏｇ（ｘ）</span></li>    
+    <li>自然対数（底ｅ）：<span  class="color_red">ｌｎ（ｘ）</span></li>   
+    <li>常用対数（底１０）：<span  class="color_red">ｌｏｇ（ｘ）</span></li>
+      <li>参考：ａ<sup>ｘ</sup>＝ｙ⇔ｘ＝ｌｏｇ<sub>ａ　</sub>ｙ、ｅ<sup>ｘ</sup>＝ｙ⇔ｘ＝ｌｏｇ　ｙ、ｌｏｇ<sub>ｘ　</sub>ｙ＝ｌｏｇ　ｙ／ｌｏｇ　ｘ、<br>
+      log（A*B)=ｌogA+logB、ｌｏｇ（Ａ÷Ｂ）=logA-logB</li>
+    </ul>
+  <P>■<b>順列・組合せ</b> <ul style="list-style-type: square">
+    <li>ｘの階乗（ｎ！）：<span  class="color_red">ｎ（ｘ）</span></li>
+    <li>順列（ｎＰｒ）：<span  class="color_red">ｎＰｒ（ｎ，ｒ）</span>　　　ｎＰｒ＝ｎ！／（ｎ－ｒ）</li>
+    <li>組合（ｎＣｒ）：<span  class="color_red">ｎＣｒ（ｎ，ｒ）</span>　　　ｎＣｒ＝ｎ！／ｒ！（ｎ－ｒ）！</li>
+  </ul>
+  <P><b>■１６進数</b> <ul style="list-style-type: square">
+    <li>１６進数１０進数変換：先頭にＯｘを付加する。例：<span  class="color_red">０ｘ</span>００ＦＦ、００ＦＦは１６進数</li>
+    <li>１０進数１６進数変換：<span  class="color_red">ｈｅｘ（ｘ）</span></li>
+  </ul>
+  <P><b>■二次式の解</b> <ul style="list-style-type: square">
+    <li>解（ａｘ<sup>２</sup>＋ｂｘ＋ｃ＝０）：<span  class="color_red">Ｘａ（ａ，ｂ，ｃ）、Ｘｂ（ａ，ｂ，ｃ）</span></li>
+    <li>Ｘａ＝（－ｂ＋ｓｑｒ（ｂ<sup>２</sup>－４ａｃ））／２ａ</li>
+    <li>Ｘｂ＝（－ｂ－ｓｑｒ（ｂ<sup>２</sup>－４ａｃ））／２ａ、ｓｑｒは√を示す。</li>
+  </ul>
+<p><b>■面積・体積</b>　</p>
+<p class="color_red">　　演算式で計算してください。</p>
+<table class="tbl">
+  <tr>
+    <td>種類</td>
+    <td>面積</td>
+    <td>体積（柱）</td>
+    <td>体積（推）</td>
+    <td>体積（球）</td>
+    <td>説明</td>
+  </tr>
+  <tr>
+    <td>長方形</td>
+    <td>ab</td>
+    <td>abH</td>
+    <td>abH/3</td>
+    <td class="tcenter">-</td>
+    <td>辺長 a,b、高さ H</td>
+  </tr>
+  <tr>
+    <td>三角形</td>
+    <td>(ah)/2</td>
+    <td>((ah)/2)H</td>
+    <td>(((ah)/2)H)/3</td>
+    <td class="tcenter">-</td>
+    <td>辺長・高さ a,h、高さ H&nbsp;</td>
+  </tr>
+  <tr>
+    <td>台形</td>
+    <td>(a+b)h/2</td>
+    <td>((a+b)h/2)H</td>
+    <td>(((a+b)h/2)H)/3</td>
+    <td class="tcenter">-</td>
+    <td>辺長・高さ a,b,h、高さ H&nbsp;</td>
+  </tr>
+  <tr>
+    <td>円</td>
+    <td>πr<sup>2</sup></td>
+    <td>πr<sup>2</sup>H</td>
+    <td>πr<sup>2</sup>H/3</td>
+    <td>4πr<sup>3</sup>/3</td>
+    <td>半径 r、高さ H&nbsp;</td>
+  </tr>
+  <tr>
+    <td>楕円</td>
+    <td>πab</td>
+    <td>πabH</td>
+    <td>πabH/3</td>
+    <td>4πabc/3</td>
+    <td>辺長 a,b、高さ H&nbsp;</td>
+  </tr>
+</table>
+  <p><b>■表面積</b></p>
+<p class="color_red">　　演算式で計算してください。</p>
+<table class="tbl">
+<tbody>
+    <tr>
+      <td>種類</td>
+      <td>表面積</td>
+      <td>説明</td>
+    </tr>
+    <tr>
+    <td>立方体</td>
+    <td>6*a<sup>2</sup></td>
+    <td>辺長 a</td>
+  </tr>
+  <tr>
+    <td>直方体</td>
+    <td>2 ( ab + bc + ac ) </td>
+    <td>辺長 a, b, c</td>
+  </tr>
+  <tr>
+    <td>球</td>
+    <td>4πr<sup>2</sup> </td>
+    <td>半径 r</td>
+  </tr>
+    <tr>
+    <td>直円錐</td>
+    <td>πr (r + ｓｑｒ（r<sup>2</sup> + H<sup>2</sup>） ) </td>
+    <td>底面の半径 r、高さ H</td>
+  </tr>
+  <tr>
+    <td>直円柱</td>
+    <td>2πr (r + H)</td>
+    <td>底面の半径 r、高さ H</td>
+  </tr>
+  <tr>
+    <td>直柱体</td>
+    <td>2 B + s H</td>
+    <td>底面積 B、底面の周 s、高さ H</td>
+  </tr>
+  </tbody>
+</table>
+</td></tr></table>
+<p style="font-size:70%;color:#404040;">h50701</p>
+<h4 class="tag">｜<a href="dentaku_kansuu.html">関数電卓</a>｜<a href="dentaku_time.html">時間計算電卓</a>｜<a href="dentaku_sankaku.html">三角関数電卓</a>｜
+<a href="../../sitemap.html">サイトマップ</a>｜<a href="../../index.html" target="_top">ホーム</a>｜</h4>
+<!-- footer --> 
+<script src="/js_footer.js" ></script>
+</BODY>
+</HTML>
+
