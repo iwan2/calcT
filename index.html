@@ -7,7 +7,7 @@
 <meta name="description" content="関数電卓">
 <link rel="stylesheet" type="text/css" href="../../css/tom.css">
 <!-- common --> 
-<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=qifOUFZjlNBpbvSDxn44m9tC3KKItuKZoL5igErn1JAtQHaTx8pQ1sZQCSuR_0BkA7ghjhk5qW0zcUoAR96dxspYc5wJoONZ1MKXApN75Xk" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly90b21hcmkub3JnL21haW4vamF2YS9kZW50YWt1X2thbnN1dS5odG1s"/><script src="/js_common.js"></script>
+<!-- <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=qifOUFZjlNBpbvSDxn44m9tC3KKItuKZoL5igErn1JAtQHaTx8pQ1sZQCSuR_0BkA7ghjhk5qW0zcUoAR96dxspYc5wJoONZ1MKXApN75Xk" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly90b21hcmkub3JnL21haW4vamF2YS9kZW50YWt1X2thbnN1dS5odG1s"/><script src="/js_common.js"></script>
 <style TYPE="text/css">
 
 .b{
@@ -17,7 +17,7 @@
 .color_red{
 	color:#FF0000 ;
 }
-</style>
+</style>  -->
 <script>
 function ini() {
   ww = window.innerWidth ;
@@ -66,17 +66,20 @@ function Xa(aa,bb,cc){return (-bb+sqr(pow(bb,2)-4*aa*cc))/(2*aa);}
 function Xb(aa,bb,cc){return (-bb-sqr(pow(bb,2)-4*aa*cc))/(2*aa);}
 </script>
 </head>
+<!--
 <BODY onload="ini() ; ">
 <h1>関数電卓</h1>
+
 <h4 class="tag">｜<a href="dentaku_kansuu.html">関数電卓</a>｜<a href="dentaku_time.html">時間計算電卓</a>｜<a href="dentaku_sankaku.html">三角関数電卓</a>｜
-<a href="../../sitemap.html">サイトマップ</a>｜<a href="../../index.html" target="_top">ホーム</a>｜</h4>
+<a href="../../sitemap.html">サイトマップ</a>｜<a href="../../index.html" target="_top">ホーム</a>｜</h4> -->
 <!-- header --> 
-<script src="/js_header.js"></script>
+<!--<script src="/js_header.js"></script>
+関数の説明と、様式は下記に示します。</b></p>
+
 <p><b>この電卓は関数入力様式で計算式を入力すると計算ができます。したがって複雑な組合せ計算も簡単にできます。<br>
     また計算結果を計算結果出力エリアに記録するので、計算式と結果に確認ができます。<br>
-    さらに計算結果の出力計算式をコピーして入力エリアに張付ける事により、再計算ができます。<br>
-    関数の説明と、様式は下記に示します。</b></p>
-
+    さらに計算結果の出力計算式をコピーして入力エリアに張付ける事により、再計算ができます。<br>  -->
+ 
 <table style="margin:0px auto;"><tr><td>
 <FORM Name="calc" onsubmit="return false;">
 <table id="idtb" style="background-color:#CCFFFF;" class="tbl">
@@ -119,11 +122,11 @@ function Xb(aa,bb,cc){return (-bb-sqr(pow(bb,2)-4*aa*cc))/(2*aa);}
     <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="ln10" onClick="disp('ln10()')"></span>
     <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="ln2e" onClick="disp('ln2e()')"></span>
     <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="ln10e" onClick="disp('ln10e()')"></span></td>
-  </tr><tr>
+<!--  </tr><tr>
     <TD class="tcenter">順列・組合</TD><td>
     <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="ｎ！" onClick="disp('n(')"></span>
     <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="ｎＰｒ" onClick="disp('nPr(')"></span>
-    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="ｎＣｒ" onClick="disp('nCr(')"></span></td>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="ｎＣｒ" onClick="disp('nCr(')"></span></td>  -->
   </tr><tr>
     <TD class="tcenter">三角関数</TD><td>
     <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="π" onClick="disp('pai()')"></span>
@@ -135,10 +138,10 @@ function Xb(aa,bb,cc){return (-bb-sqr(pow(bb,2)-4*aa*cc))/(2*aa);}
     <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="asin" onClick="disp('asin(')"></span>
     <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="acos" onClick="disp('acos(')"></span>
     <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="atan" onClick="disp('atan(')"></span></td>
-  </tr><tr>
+<!--    </tr><tr>
     <TD class="tcenter">２次式解</TD><td>
     <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="Ｘａ" onClick="disp('Xa(')"></span>
-    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="Ｘｂ" onClick="disp('Xb(')"></span></td>
+    <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="Ｘｂ" onClick="disp('Xb(')"></span></td>  -->
   </tr><tr>
     <TD class="tcenter">１６進数</TD><td>
     <span class="tcenter"><INPUT class=b TYPE="BUTTON" VALUE="hex" onClick="disp('hex(')"></span>
@@ -156,6 +159,7 @@ function Xb(aa,bb,cc){return (-bb-sqr(pow(bb,2)-4*aa*cc))/(2*aa);}
   </tr>
 </table>
 </form>
+<!--
 <P><b>計算関数の説明</b><span  class="color_red"><u>（関数様式は赤、下線で示す）</u></span></p>
 <P><b>■一般の関数</b> <ul style="list-style-type: square">
     <li>ｘのｙ乗　　　　　：<span  class="color_red"><u>ｐｏｗ（ｘ、ｙ）</u></span></li>
@@ -297,9 +301,9 @@ function Xb(aa,bb,cc){return (-bb-sqr(pow(bb,2)-4*aa*cc))/(2*aa);}
 </td></tr></table>
 <p style="font-size:70%;color:#404040;">h50701</p>
 <h4 class="tag">｜<a href="dentaku_kansuu.html">関数電卓</a>｜<a href="dentaku_time.html">時間計算電卓</a>｜<a href="dentaku_sankaku.html">三角関数電卓</a>｜
-<a href="../../sitemap.html">サイトマップ</a>｜<a href="../../index.html" target="_top">ホーム</a>｜</h4>
+<a href="../../sitemap.html">サイトマップ</a>｜<a href="../../index.html" target="_top">ホーム</a>｜</h4> -->
 <!-- footer --> 
-<script src="/js_footer.js" ></script>
+<!-- <script src="/js_footer.js" ></script>  -->
 </BODY>
 </HTML>
 
